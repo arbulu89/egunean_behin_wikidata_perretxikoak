@@ -1,0 +1,12 @@
+SELECT ?item ?esteka ?euskarazkoIzena ?irudia WHERE {
+  SERVICE wikibase:label { 
+    bd:serviceParam wikibase:language "eu". 
+    ?item rdfs:label ?euskarazkoIzena.  
+  }
+  ?item wdt:P31 wd:Q16521;
+               wdt:P789 ?jangarritasuna;
+               wdt:P18 ?irudia. 
+  ?esteka schema:about ?item; 
+          schema:inLanguage "eu"; 
+          schema:isPartOf <https://eu.wikipedia.org/>.
+} 
